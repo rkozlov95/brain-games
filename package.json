@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/rkozlov95/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/rkozlov95/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/rkozlov95/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7"
+  }
 }
