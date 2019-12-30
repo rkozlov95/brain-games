@@ -1,0 +1,22 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "brain-games is a console application that contains some simple games",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "./src/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkozlov95/frontend-project-lvl1.git"
+  },
+  "author": "rkozlov95",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkozlov95/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/rkozlov95/frontend-project-lvl1#readme"
+}
