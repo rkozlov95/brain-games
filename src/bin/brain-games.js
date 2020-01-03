@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import discoverName from '..';
+import { discoverName } from '..';
 
 console.log('Welcome to the Brain Games!');
 const user = discoverName();
