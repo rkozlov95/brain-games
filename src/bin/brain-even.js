@@ -21,7 +21,7 @@ while (iter < 3) {
     console.log('Correct!');
     iter += 1;
     if (iter === 3) {
-      console.log(`Congratulations, ${user} !`);
+      console.log(`Congratulations, ${user}!`);
     }
   } else {
     iter = 3;
