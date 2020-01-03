@@ -16,12 +16,12 @@ while (iter < 3) {
   const userAnswer = getQuestion(newGame);
   const trueAnswer = (parityCheck(newGame)) ? 'yes' : 'no';
 
-  console.log('Your Answer: ' + userAnswer);
+  console.log(`Your Answer: ${userAnswer}`);
   if (trueAnswer === userAnswer) {
     console.log('Correct!');
     iter += 1;
     if (iter === 3) {
-      console.log('Congratulations, ' + user + '!');
+      console.log(`Congratulations, ${user} !`);
     }
   } else {
     iter = 3;
