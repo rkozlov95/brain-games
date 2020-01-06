@@ -7,16 +7,22 @@ export const discoverName = () => {
   return name;
 };
 
-// brain-even game
+export const makeGame = (question, answer) => cons(question, answer);
 
-export const initBrainEven = () => {
-  const num = Math.floor(Math.random() * 101) + 1;
-  const question = readlineSync.question(`Question: ${num}\n`);
-  return cons(num, question);
+export const getQuestion = (pair) => car(pair);
+
+export const getUserAnswer = (pair) => cdr(pair);
+
+export const initGame = (iter, userName, check, newGameQuest) => {
+  const gameQuestion = newGameQuest();
+  const userAnswer = readlineSync.question(`Question: ${gameQuestion}\n`);
+  const newIter = makeGame(gameQuestion, userAnswer);
+  console.log(`Your Answer: ${getUserAnswer(newIter)}`);
+  if (check(newIter) === getUserAnswer(newIter)) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${getUserAnswer(newIter)}' is wrong answer ;(. Correct answer was '${check(newIter)}'.`);
+    return console.log(`Let's try again, ${userName}!`);
+  }
+  return (iter > 1) ? initGame(iter - 1, userName, check, newGameQuest) : console.log(`Congratulations, ${userName}!`);
 };
-
-export const getNum = (pair) => car(pair);
-
-export const getQuestion = (pair) => cdr(pair);
-
-export const parityCheck = (pair) => getNum(pair) % 2 === 0;
