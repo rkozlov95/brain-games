@@ -18,4 +18,4 @@ sudo npm install
 [![asciicast](https://asciinema.org/a/291686.svg)](https://asciinema.org/a/291686)
 
 **brain-calc** — game launch brain-calc
-[![asciicast](https://asciinema.org/a/292245.svg)](https://asciinema.org/a/292245)
+[![asciicast](https://asciinema.org/a/292246.svg)](https://asciinema.org/a/292246)
