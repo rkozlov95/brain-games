@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "brain-games is a console application that contains some simple games",
   "main": "index.js",
+  "keywords": [
+    "CLI games",
+    "brain-games",
+    "artithmetic-games"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/games/brain-even.js",
