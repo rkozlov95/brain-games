@@ -19,3 +19,12 @@ sudo npm install
 
 **brain-calc** — game launch brain-calc
 [![asciicast](https://asciinema.org/a/292246.svg)](https://asciinema.org/a/292246)
+
+**brain-gcd** — game launch brain-gcd
+[![asciicast](https://asciinema.org/a/292264.svg)](https://asciinema.org/a/292264)
+
+**brain-gcd** — game launch brain-progression
+[![asciicast](https://asciinema.org/a/292328.svg)](https://asciinema.org/a/292328)
+
+**brain-prime** — game launch brain-prime
+[![asciicast](https://asciinema.org/a/292330.svg)](https://asciinema.org/a/292330)
