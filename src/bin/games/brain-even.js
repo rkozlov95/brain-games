@@ -2,7 +2,7 @@
 
 import {
   initBrainEven,
-} from '../games/brain-even-engine';
+} from '../../games-engines/brain-even-engine';
 
 
 console.log('Welcome to the Brain Games!');
