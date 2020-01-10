@@ -39,10 +39,10 @@ export const parseQuesion = (pair) => {
   return trueAnswer(data);
 };
 
-export const initBrainCalc = (iter) => {
+export const initBrainCalc = () => {
   greeting();
   console.log('What is the result of the expression?');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
-  return initGame(iter, user, parseQuesion, newGameQuestion);
+  return initGame(3, user, parseQuesion, newGameQuestion);
 };

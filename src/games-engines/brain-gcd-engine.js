@@ -30,10 +30,10 @@ export const parseQuesion = (pair) => {
   return trueAnswer(data);
 };
 
-export const initBrainGcd = (iter) => {
+export const initBrainGcd = () => {
   greeting();
   console.log('Find the greatest common divisor of given numbers.');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
-  return initGame(iter, user, parseQuesion, newGameQuestion);
+  return initGame(3, user, parseQuesion, newGameQuestion);
 };

@@ -37,10 +37,10 @@ export const trueAnswer = (pair) => {
   return `${a1 + (d * findInd)}`;
 };
 
-export const initBrainProgression = (iter) => {
+export const initBrainProgression = () => {
   greeting();
   console.log('What number is missing in the progression?');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
-  return initGame(iter, user, trueAnswer, newGameQuestion);
+  return initGame(3, user, trueAnswer, newGameQuestion);
 };
