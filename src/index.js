@@ -26,3 +26,5 @@ export const initGame = (iter, userName, check, newGameQuest) => {
   }
   return (iter > 1) ? initGame(iter - 1, userName, check, newGameQuest) : console.log(`Congratulations, ${userName}!`);
 };
+
+export const greeting = () => console.log('Welcome to the Brain Games!');

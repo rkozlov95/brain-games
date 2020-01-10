@@ -2,6 +2,7 @@ import {
   initGame,
   discoverName,
   getQuestion,
+  greeting,
 } from '..';
 
 
@@ -37,6 +38,8 @@ export const trueAnswer = (pair) => {
 };
 
 export const initBrainProgression = (iter) => {
+  greeting();
+  console.log('What number is missing in the progression?');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
   return initGame(iter, user, trueAnswer, newGameQuestion);

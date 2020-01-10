@@ -2,6 +2,7 @@ import {
   initGame,
   discoverName,
   getQuestion,
+  greeting,
 } from '..';
 
 export const newGameQuestion = () => {
@@ -12,6 +13,8 @@ export const newGameQuestion = () => {
 export const parityCheck = (pair) => ((getQuestion(pair) % 2 === 0) ? 'yes' : 'no');
 
 export const initBrainEven = (iter) => {
+  greeting();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
   return initGame(iter, user, parityCheck, newGameQuestion);

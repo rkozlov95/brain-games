@@ -2,6 +2,7 @@ import {
   initGame,
   discoverName,
   getQuestion,
+  greeting,
 } from '..';
 
 export const generateSign = () => {
@@ -39,6 +40,8 @@ export const parseQuesion = (pair) => {
 };
 
 export const initBrainCalc = (iter) => {
+  greeting();
+  console.log('What is the result of the expression?');
   const user = discoverName();
   console.log(`Hello, ${user}!`);
   return initGame(iter, user, parseQuesion, newGameQuestion);
