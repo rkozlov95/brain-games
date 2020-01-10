@@ -33,3 +33,5 @@ export const initGame = (description, iter, trueAnswer, gameQuest) => {
   };
   return gameIter(iter, user, trueAnswer, gameQuest);
 };
+
+export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

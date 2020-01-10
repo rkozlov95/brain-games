@@ -1,19 +1,19 @@
 import {
   initGame,
   getQuestion,
+  getRandomNum,
 } from '..';
 
 
 export const hideOneNumber = (str) => {
   const data = str.split(' ');
-  const randNum = Math.floor(Math.random() * 9);
-  data[randNum] = '..';
+  data[getRandomNum(0, 9)] = '..';
   return data.join(' ');
 };
 
 export const newGameQuestion = () => {
-  const k = Math.floor(Math.random() * 10) + 1;
-  const b = Math.floor(Math.random() * 10) + 1;
+  const k = getRandomNum(1, 10);
+  const b = getRandomNum(1, 10);
   let progression = `${k * 1 + b}`;
   for (let i = 2; i <= 10; i += 1) {
     progression += ` ${k * i + b}`;

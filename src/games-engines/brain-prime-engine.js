@@ -1,12 +1,10 @@
 import {
   initGame,
   getQuestion,
+  getRandomNum,
 } from '..';
 
-export const newGameQuestion = () => {
-  const num = Math.floor(Math.random() * 101) + 1;
-  return num;
-};
+export const newGameQuestion = () => getRandomNum(1, 100);
 
 export const isSimpleNum = (n) => {
   for (let i = 2; i < Math.sqrt(n); i += 1) {

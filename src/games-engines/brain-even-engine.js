@@ -1,12 +1,10 @@
 import {
   initGame,
   getQuestion,
+  getRandomNum,
 } from '..';
 
-export const newGameQuestion = () => {
-  const num = Math.floor(Math.random() * 101) + 1;
-  return num;
-};
+export const newGameQuestion = () => getRandomNum(1, 100);
 
 export const parityCheck = (pair) => ((getQuestion(pair) % 2 === 0) ? 'yes' : 'no');
 

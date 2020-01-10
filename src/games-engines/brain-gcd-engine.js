@@ -1,11 +1,12 @@
 import {
   initGame,
   getQuestion,
+  getRandomNum,
 } from '..';
 
 export const newGameQuestion = () => {
-  const num1 = Math.floor(Math.random() * 100) + 1;
-  const num2 = Math.floor(Math.random() * 100) + 1;
+  const num1 = getRandomNum(1, 100);
+  const num2 = getRandomNum(1, 100);
   return `${num1} ${num2}`;
 };
 
