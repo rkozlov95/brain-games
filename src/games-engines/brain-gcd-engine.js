@@ -10,28 +10,28 @@ export const newGameQuestion = () => {
   return `${num1} ${num2}`;
 };
 
-export const trueAnswer = (data) => {
-  let first = Number(data[0]);
-  let second = Number(data[1]);
-  while (first !== second) {
-    if (first > second) {
-      first -= second;
-    } else {
-      second -= first;
-    }
+export const getNode = (first, second) => {
+  if (first === second) {
+    return first;
   }
-  return `${first}`;
+  if (first > second) {
+    return getNode(first - second, second);
+  }
+  return getNode(first, second - first);
 };
 
-export const parseQuesion = (pair) => {
-  const question = getQuestion(pair);
-  const data = question.split(' ');
-  return trueAnswer(data);
+export const parseQuesion = (pair) => (getQuestion(pair).split(' '));
+
+export const trueAnswer = (pair) => {
+  const data = parseQuesion(pair);
+  const num1 = Number(data[0]);
+  const num2 = Number(data[1]);
+  return `${getNode(num1, num2)}`;
 };
 
 export const initBrainGcd = () => (initGame(
   'Find the greatest common divisor of given numbers.',
   3,
-  parseQuesion,
+  trueAnswer,
   newGameQuestion,
 ));

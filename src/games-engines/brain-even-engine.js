@@ -6,11 +6,13 @@ import {
 
 export const newGameQuestion = () => getRandomNum(1, 100);
 
-export const parityCheck = (pair) => ((getQuestion(pair) % 2 === 0) ? 'yes' : 'no');
+export const parityCheck = (num) => num % 2 === 0;
+
+export const trueAnswer = (pair) => (parityCheck(getQuestion(pair)) ? 'yes' : 'no');
 
 export const initBrainEven = () => (initGame(
   'Answer "yes" if the number is even, otherwise answer "no".',
   3,
-  parityCheck,
+  trueAnswer,
   newGameQuestion,
 ));

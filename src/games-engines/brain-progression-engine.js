@@ -4,6 +4,15 @@ import {
   getRandomNum,
 } from '..';
 
+export const getProgression = () => {
+  const k = getRandomNum(1, 10);
+  const b = getRandomNum(1, 10);
+  let progression = `${k * 1 + b}`;
+  for (let i = 2; i <= 10; i += 1) {
+    progression += ` ${k * i + b}`;
+  }
+  return progression;
+};
 
 export const hideOneNumber = (str) => {
   const data = str.split(' ');
@@ -11,15 +20,7 @@ export const hideOneNumber = (str) => {
   return data.join(' ');
 };
 
-export const newGameQuestion = () => {
-  const k = getRandomNum(1, 10);
-  const b = getRandomNum(1, 10);
-  let progression = `${k * 1 + b}`;
-  for (let i = 2; i <= 10; i += 1) {
-    progression += ` ${k * i + b}`;
-  }
-  return hideOneNumber(progression);
-};
+export const newGameQuestion = () => hideOneNumber(getProgression());
 
 export const trueAnswer = (pair) => {
   const str = getQuestion(pair);

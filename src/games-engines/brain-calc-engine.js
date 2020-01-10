@@ -16,7 +16,14 @@ export const newGameQuestion = () => {
   return `${num1} ${arithmetic} ${num2}`;
 };
 
-export const trueAnswer = (data) => {
+export const parseQuesion = (pair) => {
+  const question = getQuestion(pair);
+  const data = question.split(' ');
+  return data;
+};
+
+export const trueAnswer = (pair) => {
+  const data = parseQuesion(pair);
   const first = Number(data[0]);
   const second = Number(data[2]);
   const arithmetic = data[1];
@@ -32,15 +39,9 @@ export const trueAnswer = (data) => {
   }
 };
 
-export const parseQuesion = (pair) => {
-  const question = getQuestion(pair);
-  const data = question.split(' ');
-  return trueAnswer(data);
-};
-
 export const initBrainCalc = () => (initGame(
   'What is the result of the expression?',
   3,
-  parseQuesion,
+  trueAnswer,
   newGameQuestion,
 ));
