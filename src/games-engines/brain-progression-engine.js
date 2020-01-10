@@ -1,8 +1,6 @@
 import {
   initGame,
-  discoverName,
   getQuestion,
-  greeting,
 } from '..';
 
 
@@ -37,10 +35,9 @@ export const trueAnswer = (pair) => {
   return `${a1 + (d * findInd)}`;
 };
 
-export const initBrainProgression = () => {
-  greeting();
-  console.log('What number is missing in the progression?');
-  const user = discoverName();
-  console.log(`Hello, ${user}!`);
-  return initGame(3, user, trueAnswer, newGameQuestion);
-};
+export const initBrainProgression = () => (initGame(
+  'What number is missing in the progression?',
+  3,
+  trueAnswer,
+  newGameQuestion,
+));

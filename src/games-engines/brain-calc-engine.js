@@ -1,8 +1,6 @@
 import {
   initGame,
-  discoverName,
   getQuestion,
-  greeting,
 } from '..';
 
 export const generateSign = () => {
@@ -39,10 +37,9 @@ export const parseQuesion = (pair) => {
   return trueAnswer(data);
 };
 
-export const initBrainCalc = () => {
-  greeting();
-  console.log('What is the result of the expression?');
-  const user = discoverName();
-  console.log(`Hello, ${user}!`);
-  return initGame(3, user, parseQuesion, newGameQuestion);
-};
+export const initBrainCalc = () => (initGame(
+  'What is the result of the expression?',
+  3,
+  parseQuesion,
+  newGameQuestion,
+));

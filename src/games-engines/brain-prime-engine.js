@@ -1,8 +1,6 @@
 import {
   initGame,
-  discoverName,
   getQuestion,
-  greeting,
 } from '..';
 
 export const newGameQuestion = () => {
@@ -21,10 +19,9 @@ export const isSimpleNum = (n) => {
 
 export const trueAnswer = (pair) => (isSimpleNum(Number(getQuestion(pair))) ? 'yes' : 'no');
 
-export const initBrainPrime = () => {
-  greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const user = discoverName();
-  console.log(`Hello, ${user}!`);
-  return initGame(3, user, trueAnswer, newGameQuestion);
-};
+export const initBrainPrime = () => (initGame(
+  'Answer "yes" if given number is prime. Otherwise answer "no".',
+  3,
+  trueAnswer,
+  newGameQuestion,
+));

@@ -1,8 +1,6 @@
 import {
   initGame,
-  discoverName,
   getQuestion,
-  greeting,
 } from '..';
 
 export const newGameQuestion = () => {
@@ -30,10 +28,9 @@ export const parseQuesion = (pair) => {
   return trueAnswer(data);
 };
 
-export const initBrainGcd = () => {
-  greeting();
-  console.log('Find the greatest common divisor of given numbers.');
-  const user = discoverName();
-  console.log(`Hello, ${user}!`);
-  return initGame(3, user, parseQuesion, newGameQuestion);
-};
+export const initBrainGcd = () => (initGame(
+  'Find the greatest common divisor of given numbers.',
+  3,
+  parseQuesion,
+  newGameQuestion,
+));
