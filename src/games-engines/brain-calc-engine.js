@@ -6,7 +6,7 @@ import {
 
 export const generateSign = () => {
   const str = '-+*';
-  return str.charAt(Math.floor(Math.random() * 3));
+  return str.charAt(getRandomNum(0, 2));
 };
 
 export const newGameQuestion = () => {
