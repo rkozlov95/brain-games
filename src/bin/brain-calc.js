@@ -2,6 +2,6 @@
 
 import {
   initBrainCalc,
-} from '../games-engines/brain-calc-engine';
+} from '../games/brain-calc-engine';
 
 initBrainCalc();

@@ -2,6 +2,6 @@
 
 import {
   initBrainPrime,
-} from '../games-engines/brain-prime-engine';
+} from '../games/brain-prime-engine';
 
 initBrainPrime();

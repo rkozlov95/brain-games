@@ -2,7 +2,7 @@ import {
   initGame,
   getQuestion,
   getRandomNum,
-} from '..';
+} from '../engine';
 
 export const getProgression = () => {
   const k = getRandomNum(1, 10);

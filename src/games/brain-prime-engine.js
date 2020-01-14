@@ -2,7 +2,7 @@ import {
   initGame,
   getQuestion,
   getRandomNum,
-} from '..';
+} from '../engine';
 
 export const newGameQuestion = () => getRandomNum(1, 100);
 

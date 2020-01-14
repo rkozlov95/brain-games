@@ -2,6 +2,6 @@
 
 import {
   initBrainGcd,
-} from '../games-engines/brain-gcd-engine';
+} from '../games/brain-gcd-engine';
 
 initBrainGcd();

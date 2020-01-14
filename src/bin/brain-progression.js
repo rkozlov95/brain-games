@@ -2,6 +2,6 @@
 
 import {
   initBrainProgression,
-} from '../games-engines/brain-progression-engine';
+} from '../games/brain-progression-engine';
 
 initBrainProgression();

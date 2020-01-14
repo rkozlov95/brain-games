@@ -2,6 +2,6 @@
 
 import {
   initBrainEven,
-} from '../games-engines/brain-even-engine';
+} from '../games/brain-even-engine';
 
 initBrainEven();
