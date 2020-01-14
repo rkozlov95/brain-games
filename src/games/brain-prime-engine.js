@@ -9,6 +9,9 @@ export const descriptionGame = 'Answer "yes" if given number is prime. Otherwise
 export const newGameQuestion = () => getRandomNum(1, 100);
 
 export const isSimpleNum = (n) => {
+  if (n < 2) {
+    return false;
+  }
   for (let i = 2; i < Math.sqrt(n); i += 1) {
     if (n % i === 0) {
       return false;
