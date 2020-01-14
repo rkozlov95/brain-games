@@ -14,7 +14,6 @@ export const trueAnswer = (pair) => (parityCheck(getQuestion(pair)) ? 'yes' : 'n
 
 export const initBrainEven = () => (initGame(
   descriptionGame,
-  3,
   trueAnswer,
   newGameQuestion,
 ));

@@ -13,7 +13,7 @@ export const getQuestion = (pair) => car(pair);
 
 export const getUserAnswer = (pair) => cdr(pair);
 
-export const initGame = (description, iter, trueAnswer, gameQuest) => {
+export const initGame = (description, trueAnswer, gameQuest, gameIters = 3) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const user = discoverName();
@@ -31,7 +31,7 @@ export const initGame = (description, iter, trueAnswer, gameQuest) => {
     }
     return (iters > 1) ? gameIter(iters - 1, userName, answer, newGameQuest) : console.log(`Congratulations, ${userName}!`);
   };
-  return gameIter(iter, user, trueAnswer, gameQuest);
+  return gameIter(gameIters, user, trueAnswer, gameQuest);
 };
 
 export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;

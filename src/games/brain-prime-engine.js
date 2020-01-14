@@ -24,7 +24,6 @@ export const trueAnswer = (pair) => (isSimpleNum(Number(getQuestion(pair))) ? 'y
 
 export const initBrainPrime = () => (initGame(
   descriptionGame,
-  3,
   trueAnswer,
   newGameQuestion,
 ));

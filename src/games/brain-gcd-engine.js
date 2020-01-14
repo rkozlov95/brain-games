@@ -33,7 +33,6 @@ export const trueAnswer = (pair) => {
 
 export const initBrainGcd = () => (initGame(
   descriptionGame,
-  3,
   trueAnswer,
   newGameQuestion,
 ));

@@ -41,7 +41,6 @@ export const trueAnswer = (pair) => {
 
 export const initBrainProgression = () => (initGame(
   descriptionGame,
-  3,
   trueAnswer,
   newGameQuestion,
 ));

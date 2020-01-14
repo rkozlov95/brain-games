@@ -6,15 +6,15 @@ import {
 
 export const descriptionGame = 'What is the result of the expression?';
 
-export const generateSign = () => {
-  const str = '-+*';
-  return str.charAt(getRandomNum(0, 2));
+export const generateSigns = (str) => {
+  const strLength = str.length;
+  return str.charAt(getRandomNum(0, strLength - 1));
 };
 
 export const newGameQuestion = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
-  const arithmetic = generateSign();
+  const arithmetic = generateSigns('-+*');
   return `${num1} ${arithmetic} ${num2}`;
 };
 
@@ -43,7 +43,6 @@ export const trueAnswer = (pair) => {
 
 export const initBrainCalc = () => (initGame(
   descriptionGame,
-  3,
   trueAnswer,
   newGameQuestion,
 ));
