@@ -4,6 +4,9 @@ import {
   getRandomNum,
 } from '../engine';
 
+export const descriptionGame = 'What number is missing in the progression?';
+
+
 export const getProgression = () => {
   const k = getRandomNum(1, 10);
   const b = getRandomNum(1, 10);
@@ -37,7 +40,7 @@ export const trueAnswer = (pair) => {
 };
 
 export const initBrainProgression = () => (initGame(
-  'What number is missing in the progression?',
+  descriptionGame,
   3,
   trueAnswer,
   newGameQuestion,

@@ -4,6 +4,8 @@ import {
   getRandomNum,
 } from '../engine';
 
+export const descriptionGame = 'What is the result of the expression?';
+
 export const generateSign = () => {
   const str = '-+*';
   return str.charAt(getRandomNum(0, 2));
@@ -40,7 +42,7 @@ export const trueAnswer = (pair) => {
 };
 
 export const initBrainCalc = () => (initGame(
-  'What is the result of the expression?',
+  descriptionGame,
   3,
   trueAnswer,
   newGameQuestion,

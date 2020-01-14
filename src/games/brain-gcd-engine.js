@@ -4,6 +4,8 @@ import {
   getRandomNum,
 } from '../engine';
 
+export const descriptionGame = 'Find the greatest common divisor of given numbers.';
+
 export const newGameQuestion = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
@@ -30,7 +32,7 @@ export const trueAnswer = (pair) => {
 };
 
 export const initBrainGcd = () => (initGame(
-  'Find the greatest common divisor of given numbers.',
+  descriptionGame,
   3,
   trueAnswer,
   newGameQuestion,
