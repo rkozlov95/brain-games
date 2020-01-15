@@ -1,12 +1,10 @@
 import {
   initGame,
-  getQuestion,
+  makeGame,
   getRandomNum,
 } from '../engine';
 
 export const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-export const newGameQuestion = () => getRandomNum(1, 100);
 
 export const isSimpleNum = (n) => {
   if (n < 2) {
@@ -20,10 +18,16 @@ export const isSimpleNum = (n) => {
   return true;
 };
 
-export const trueAnswer = (pair) => (isSimpleNum(Number(getQuestion(pair))) ? 'yes' : 'no');
+export const trueAnswer = (num) => (isSimpleNum(num) ? 'yes' : 'no');
+
+export const makeGamePrime = () => {
+  const question = getRandomNum(1, 100);
+  const answer = trueAnswer(question);
+  return makeGame(question, answer);
+};
+
 
 export const initBrainPrime = () => (initGame(
   descriptionGame,
-  trueAnswer,
-  newGameQuestion,
+  makeGamePrime,
 ));

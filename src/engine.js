@@ -11,27 +11,31 @@ export const makeGame = (question, answer) => cons(question, answer);
 
 export const getQuestion = (pair) => car(pair);
 
-export const getUserAnswer = (pair) => cdr(pair);
+export const getAnswer = (pair) => cdr(pair);
 
-export const initGame = (description, trueAnswer, gameQuest, gameIters = 3) => {
+export const initGame = (description, game, gameIters = 3) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const user = discoverName();
   console.log(`Hello, ${user}!`);
-  const gameIter = (iters, userName, answer, newGameQuest) => {
-    const gameQuestion = newGameQuest();
-    const userAnswer = readlineSync.question(`Question: ${gameQuestion}\n`);
-    const newIter = makeGame(gameQuestion, userAnswer);
-    console.log(`Your Answer: ${getUserAnswer(newIter)}`);
-    if (answer(newIter) === getUserAnswer(newIter)) {
+  const gameIter = (iters, userName, currentGame) => {
+    const createGame = currentGame();
+    const userAnswer = readlineSync.question(`Question: ${getQuestion(createGame)}\n`);
+    console.log(`Your Answer: ${userAnswer}`);
+    if (getAnswer(createGame) === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${getUserAnswer(newIter)}' is wrong answer ;(. Correct answer was '${answer(newIter)}'.`);
-      return console.log(`Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getAnswer(createGame)}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return false;
     }
-    return (iters > 1) ? gameIter(iters - 1, userName, answer, newGameQuest) : console.log(`Congratulations, ${userName}!`);
+    if (iters <= 1) {
+      console.log(`Congratulations, ${userName}!`);
+      return true;
+    }
+    return gameIter(iters - 1, userName, currentGame);
   };
-  return gameIter(gameIters, user, trueAnswer, gameQuest);
+  return gameIter(gameIters, user, game);
 };
 
 export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
