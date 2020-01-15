@@ -19,13 +19,13 @@ export const initGame = (description, game, gameIters = 3) => {
   const user = discoverName();
   console.log(`Hello, ${user}!`);
   const gameIter = (iters, userName, currentGame) => {
-    const createGame = currentGame();
-    const userAnswer = readlineSync.question(`Question: ${getQuestion(createGame)}\n`);
+    const gameData = currentGame();
+    const userAnswer = readlineSync.question(`Question: ${getQuestion(gameData)}\n`);
     console.log(`Your Answer: ${userAnswer}`);
-    if (getAnswer(createGame) === userAnswer) {
+    if (getAnswer(gameData) === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getAnswer(createGame)}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getAnswer(gameData)}'.`);
       console.log(`Let's try again, ${userName}!`);
       return false;
     }
