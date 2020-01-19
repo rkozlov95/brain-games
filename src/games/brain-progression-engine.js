@@ -1,35 +1,40 @@
+import initGame from '../engine';
+
 import {
   makeGame,
-  initGame,
   getRandomNum,
-} from '../engine';
+} from '../utils';
 
-export const descriptionGame = 'What number is missing in the progression?';
+const descriptionGame = 'What number is missing in the progression?';
 
-export const getProgression = (k, b) => {
+const getProgression = (k, b, progressionSize) => {
   const progression = [];
-  for (let i = 0; i <= 9; i += 1) {
+  for (let i = 0; i <= (progressionSize - 1); i += 1) {
     progression[i] = k * i + b;
   }
   return progression;
 };
 
-export const prepareGame = (mas) => {
+const prepareGame = (mas) => {
   const data = mas;
-  const chooseElem = getRandomNum(0, 9);
-  const answer = data[chooseElem];
-  data[chooseElem] = '..';
-  return makeGame(data.join(' '), answer.toString());
+  const randomIndex = getRandomNum(0, data.length - 1);
+  const answer = data[randomIndex].toString();
+  data[randomIndex] = '..';
+  const question = data.join(' ');
+  return makeGame(question, answer);
 };
 
-export const makeGameProgression = () => {
+const makeGameProgression = () => {
   const k = getRandomNum(1, 10);
   const b = getRandomNum(1, 10);
-  const progression = getProgression(k, b);
+  const progressionSize = 10;
+  const progression = getProgression(k, b, progressionSize);
   return prepareGame(progression);
 };
 
-export const initBrainProgression = () => (initGame(
+const initBrainProgression = () => (initGame(
   descriptionGame,
   makeGameProgression,
 ));
+
+export default initBrainProgression;

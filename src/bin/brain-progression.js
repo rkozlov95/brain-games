@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import {
-  initBrainProgression,
-} from '../games/brain-progression-engine';
+import initBrainProgression from '../games/brain-progression-engine';
 
 initBrainProgression();

@@ -1,12 +1,13 @@
+import initGame from '../engine';
+
 import {
-  initGame,
   makeGame,
   getRandomNum,
-} from '../engine';
+} from '../utils';
 
-export const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const isSimpleNum = (n) => {
+const isSimpleNum = (n) => {
   if (n < 2) {
     return false;
   }
@@ -18,16 +19,18 @@ export const isSimpleNum = (n) => {
   return true;
 };
 
-export const trueAnswer = (num) => (isSimpleNum(num) ? 'yes' : 'no');
+const getTrueAnswer = (num) => (isSimpleNum(num) ? 'yes' : 'no');
 
-export const makeGamePrime = () => {
+const makeGamePrime = () => {
   const question = getRandomNum(1, 100);
-  const answer = trueAnswer(question);
+  const answer = getTrueAnswer(question);
   return makeGame(question, answer);
 };
 
 
-export const initBrainPrime = () => (initGame(
+const initBrainPrime = () => (initGame(
   descriptionGame,
   makeGamePrime,
 ));
+
+export default initBrainPrime;

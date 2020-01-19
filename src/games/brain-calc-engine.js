@@ -1,38 +1,44 @@
+import initGame from '../engine';
+
 import {
-  initGame,
   makeGame,
   getRandomNum,
-} from '../engine';
+} from '../utils';
 
-export const descriptionGame = 'What is the result of the expression?';
+const descriptionGame = 'What is the result of the expression?';
 
-export const generateSign = (str) => {
-  const strLength = str.length;
-  return str.charAt(getRandomNum(0, strLength - 1));
+const getSign = () => {
+  const signs = '-+*';
+  const strLength = signs.length;
+  return signs.charAt(getRandomNum(0, strLength - 1));
 };
 
-export const trueAnswer = (first, sign, second) => {
+const getTrueAnswer = (firstNum, sign, secondNum) => {
   switch (sign) {
     case '-':
-      return first - second;
+      return firstNum - secondNum;
     case '+':
-      return first + second;
+      return firstNum + secondNum;
     case '*':
-      return first * second;
+      return firstNum * secondNum;
     default:
       return false;
   }
 };
 
-export const makeGameCalc = () => {
+const makeGameCalc = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
-  const sign = generateSign('-+*');
+  const sign = getSign();
   const data = [num1, sign, num2];
-  return makeGame(data.join(' '), trueAnswer(num1, sign, num2).toString());
+  const question = data.join(' ');
+  const answer = getTrueAnswer(num1, sign, num2).toString();
+  return makeGame(question, answer);
 };
 
-export const initBrainCalc = () => (initGame(
+const initBrainCalc = () => (initGame(
   descriptionGame,
   makeGameCalc,
 ));
+
+export default initBrainCalc;

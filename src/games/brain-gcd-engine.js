@@ -1,29 +1,34 @@
+import initGame from '../engine';
+
 import {
-  initGame,
   makeGame,
   getRandomNum,
-} from '../engine';
+} from '../utils';
 
-export const descriptionGame = 'Find the greatest common divisor of given numbers.';
+const descriptionGame = 'Find the greatest common divisor of given numbers.';
 
-export const getNode = (first, second) => {
+const getGcd = (first, second) => {
   if (first === second) {
     return first;
   }
   if (first > second) {
-    return getNode(first - second, second);
+    return getGcd(first - second, second);
   }
-  return getNode(first, second - first);
+  return getGcd(first, second - first);
 };
 
-export const makeGameGcd = () => {
-  const first = getRandomNum(1, 100);
-  const second = getRandomNum(1, 100);
-  const nums = [first, second];
-  return makeGame(nums.join(' '), getNode(first, second).toString());
+const makeGameGcd = () => {
+  const firstNum = getRandomNum(1, 100);
+  const secondNum = getRandomNum(1, 100);
+  const nums = [firstNum, secondNum];
+  const question = nums.join(' ');
+  const answer = getGcd(firstNum, secondNum).toString();
+  return makeGame(question, answer);
 };
 
-export const initBrainGcd = () => (initGame(
+const initBrainGcd = () => (initGame(
   descriptionGame,
   makeGameGcd,
 ));
+
+export default initBrainGcd;

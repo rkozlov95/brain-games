@@ -1,22 +1,16 @@
 import readlineSync from 'readline-sync';
 
-import { cons, car, cdr } from '@hexlet/pairs';
+import { getAnswer, getQuestion } from './utils';
 
-export const discoverName = () => {
+const discoverUserName = () => {
   const name = readlineSync.question('May I have your name?: ');
   return name;
 };
 
-export const makeGame = (question, answer) => cons(question, answer);
-
-export const getQuestion = (pair) => car(pair);
-
-export const getAnswer = (pair) => cdr(pair);
-
-export const initGame = (description, game, gameIters = 3) => {
+const initGame = (description, game, gameIters = 3) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
-  const user = discoverName();
+  const user = discoverUserName();
   console.log(`Hello, ${user}!`);
   const gameIter = (iters, userName, currentGame) => {
     const gameData = currentGame();
@@ -38,4 +32,4 @@ export const initGame = (description, game, gameIters = 3) => {
   return gameIter(gameIters, user, game);
 };
 
-export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export default initGame;

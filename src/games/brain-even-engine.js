@@ -1,21 +1,25 @@
+import initGame from '../engine';
+
 import {
-  initGame,
   makeGame,
   getRandomNum,
-} from '../engine';
+} from '../utils';
 
-export const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const parityCheck = (num) => num % 2 === 0;
+const isEvenNumber = (num) => num % 2 === 0;
 
-export const trueAnswer = (num) => (parityCheck(num) ? 'yes' : 'no');
+const getTrueAnswer = (num) => (isEvenNumber(num) ? 'yes' : 'no');
 
-export const makeEvenGame = () => {
-  const num = getRandomNum(1, 100);
-  return makeGame(num, trueAnswer(num));
+const makeEvenGame = () => {
+  const question = getRandomNum(1, 100);
+  const answer = getTrueAnswer(question);
+  return makeGame(question, answer);
 };
 
-export const initBrainEven = () => (initGame(
+const initBrainEven = () => (initGame(
   descriptionGame,
   makeEvenGame,
 ));
+
+export default initBrainEven;
