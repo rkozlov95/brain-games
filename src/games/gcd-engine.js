@@ -1,4 +1,4 @@
-import initGame from '../engine';
+import playGame from '../engine';
 
 import {
   makeGame,
@@ -6,6 +6,8 @@ import {
 } from '../utils';
 
 const descriptionGame = 'Find the greatest common divisor of given numbers.';
+
+const iterationsCount = 3;
 
 const getGcd = (first, second) => {
   if (first === second) {
@@ -26,9 +28,6 @@ const makeGameGcd = () => {
   return makeGame(question, answer);
 };
 
-const initBrainGcd = () => (initGame(
-  descriptionGame,
-  makeGameGcd,
-));
+const initBrainGcd = () => playGame(descriptionGame, makeGameGcd, iterationsCount);
 
 export default initBrainGcd;

@@ -1,4 +1,4 @@
-import initGame from '../engine';
+import playGame from '../engine';
 
 import {
   makeGame,
@@ -7,7 +7,9 @@ import {
 
 const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isSimpleNum = (n) => {
+const iterationsCount = 3;
+
+const isSimple = (n) => {
   if (n < 2) {
     return false;
   }
@@ -19,18 +21,13 @@ const isSimpleNum = (n) => {
   return true;
 };
 
-const getTrueAnswer = (num) => (isSimpleNum(num) ? 'yes' : 'no');
-
 const makeGamePrime = () => {
   const question = getRandomNum(1, 100);
-  const answer = getTrueAnswer(question);
+  const answer = isSimple(question) ? 'yes' : 'no';
   return makeGame(question, answer);
 };
 
 
-const initBrainPrime = () => (initGame(
-  descriptionGame,
-  makeGamePrime,
-));
+const initBrainPrime = () => playGame(descriptionGame, makeGamePrime, iterationsCount);
 
 export default initBrainPrime;

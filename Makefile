@@ -5,4 +5,4 @@ install:
 start:
 	npm run build
 lint:
-	npx eslint src
+	npx eslint .

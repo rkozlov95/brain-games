@@ -1,4 +1,4 @@
-import initGame from '../engine';
+import playGame from '../engine';
 
 import {
   makeGame,
@@ -6,6 +6,8 @@ import {
 } from '../utils';
 
 const descriptionGame = 'What number is missing in the progression?';
+
+const iterationsCount = 3;
 
 const getProgression = (k, b, progressionSize) => {
   const progression = [];
@@ -15,13 +17,11 @@ const getProgression = (k, b, progressionSize) => {
   return progression;
 };
 
-const prepareGame = (mas) => {
-  const data = mas;
-  const randomIndex = getRandomNum(0, data.length - 1);
-  const answer = data[randomIndex].toString();
+const prepareQuestion = (progression, randomIndex) => {
+  const data = progression;
   data[randomIndex] = '..';
-  const question = data.join(' ');
-  return makeGame(question, answer);
+  const newProgression = data.join(' ');
+  return newProgression;
 };
 
 const makeGameProgression = () => {
@@ -29,12 +29,12 @@ const makeGameProgression = () => {
   const b = getRandomNum(1, 10);
   const progressionSize = 10;
   const progression = getProgression(k, b, progressionSize);
-  return prepareGame(progression);
+  const randomIndex = getRandomNum(0, progressionSize - 1);
+  const answer = progression[randomIndex];
+  const question = prepareQuestion(progression, randomIndex);
+  return makeGame(question, answer);
 };
 
-const initBrainProgression = () => (initGame(
-  descriptionGame,
-  makeGameProgression,
-));
+const initBrainProgression = () => playGame(descriptionGame, makeGameProgression, iterationsCount);
 
 export default initBrainProgression;

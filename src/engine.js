@@ -7,29 +7,31 @@ const discoverUserName = () => {
   return name;
 };
 
-const initGame = (description, game, gameIters = 3) => {
+const playGame = (description, gameFunction, iterationsCount) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
-  const user = discoverUserName();
-  console.log(`Hello, ${user}!`);
-  const gameIter = (iters, userName, currentGame) => {
-    const gameData = currentGame();
-    const userAnswer = readlineSync.question(`Question: ${getQuestion(gameData)}\n`);
-    console.log(`Your Answer: ${userAnswer}`);
-    if (getAnswer(gameData) === userAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${getAnswer(gameData)}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      return false;
-    }
-    if (iters <= 1) {
+  const userName = discoverUserName();
+  console.log(`Hello, ${userName}!`);
+  const gameIter = (iter) => {
+    if (iter <= 0) {
       console.log(`Congratulations, ${userName}!`);
       return true;
     }
-    return gameIter(iters - 1, userName, currentGame);
+    const gameData = gameFunction();
+    const question = getQuestion(gameData);
+    const answer = getAnswer(gameData);
+    const userAnswer = readlineSync.question(`Question: ${question}\n`);
+    console.log(`Your Answer: ${userAnswer}`);
+    if (answer === userAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return false;
+    }
+    return gameIter(iter - 1);
   };
-  return gameIter(gameIters, user, game);
+  return gameIter(iterationsCount);
 };
 
-export default initGame;
+export default playGame;
