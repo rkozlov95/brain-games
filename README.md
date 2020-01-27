@@ -24,7 +24,7 @@ sudo npm install
 <a href="https://asciinema.org/a/292264" target="_blank"><img src="https://asciinema.org/a/292264.svg" height="490" width="750"/></a>
 
 **brain-progression** — game launch brain-progression
-<a href="https://asciinema.org/a/292328" target="_blank"><img src="https://asciinema.org/a/292328.svg" height="490" width="750"/></a>
+<a href="https://asciinema.org/a/296189" target="_blank"><img src="https://asciinema.org/a/296189.svg" height="490" width="750"/></a>
 
 **brain-prime** — game launch brain-prime
 <a href="https://asciinema.org/a/292330" target="_blank"><img src="https://asciinema.org/a/292330.svg" height="490" width="750"/></a>
