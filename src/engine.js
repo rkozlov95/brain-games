@@ -2,25 +2,26 @@ import readlineSync from 'readline-sync';
 
 import { getAnswer, getQuestion } from './utils';
 
-const discoverUserName = () => {
-  const name = readlineSync.question('May I have your name?: ');
-  return name;
-};
+const iterationsCount = 3;
 
-const playGame = (description, gameFunction, iterationsCount) => {
+const ask = (question) => readlineSync.question(`${question}`);
+
+const playGame = (gameDescription, getGameData) => {
   console.log('Welcome to the Brain Games!');
-  console.log(description);
-  const userName = discoverUserName();
+  console.log(gameDescription);
+  console.log('May I have your name?');
+  const userName = ask(':');
   console.log(`Hello, ${userName}!`);
-  const gameIter = (iter) => {
-    if (iter <= 0) {
+  const makeGame = (duplicationsCount) => {
+    if (duplicationsCount <= 0) {
       console.log(`Congratulations, ${userName}!`);
       return true;
     }
-    const gameData = gameFunction();
+    const gameData = getGameData();
     const question = getQuestion(gameData);
     const answer = getAnswer(gameData);
-    const userAnswer = readlineSync.question(`Question: ${question}\n`);
+    console.log(`Question: ${question}`);
+    const userAnswer = ask(':');
     console.log(`Your Answer: ${userAnswer}`);
     if (answer === userAnswer) {
       console.log('Correct!');
@@ -29,9 +30,9 @@ const playGame = (description, gameFunction, iterationsCount) => {
       console.log(`Let's try again, ${userName}!`);
       return false;
     }
-    return gameIter(iter - 1);
+    return makeGame(duplicationsCount - 1);
   };
-  return gameIter(iterationsCount);
+  return makeGame(iterationsCount);
 };
 
 export default playGame;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import initBrainProgression from '../games/progression-engine';
+import startGameProgression from '../games/progression-module';
 
-initBrainProgression();
+startGameProgression();

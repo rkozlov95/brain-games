@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import initBrainEven from '../games/even-engine';
+import startGameEven from '../games/even-module';
 
-initBrainEven();
+startGameEven();
