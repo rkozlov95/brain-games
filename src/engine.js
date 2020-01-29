@@ -9,11 +9,10 @@ const ask = (question) => readlineSync.question(`${question}`);
 const playGame = (gameDescription, getGameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameDescription);
-  console.log('May I have your name?');
-  const userName = ask(':');
+  const userName = ask('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  const makeGame = (duplicationsCount) => {
-    if (duplicationsCount <= 0) {
+  const playRound = (counter) => {
+    if (counter <= 0) {
       console.log(`Congratulations, ${userName}!`);
       return true;
     }
@@ -21,8 +20,7 @@ const playGame = (gameDescription, getGameData) => {
     const question = getQuestion(gameData);
     const answer = getAnswer(gameData);
     console.log(`Question: ${question}`);
-    const userAnswer = ask(':');
-    console.log(`Your Answer: ${userAnswer}`);
+    const userAnswer = ask('Your Answer: ');
     if (answer === userAnswer) {
       console.log('Correct!');
     } else {
@@ -30,9 +28,9 @@ const playGame = (gameDescription, getGameData) => {
       console.log(`Let's try again, ${userName}!`);
       return false;
     }
-    return makeGame(duplicationsCount - 1);
+    return playRound(counter - 1);
   };
-  return makeGame(iterationsCount);
+  return playRound(iterationsCount);
 };
 
 export default playGame;

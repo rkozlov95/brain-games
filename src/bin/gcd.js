@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import startGameGcd from '../games/gcd-module';
+import startGameGcd from '../games/gcd';
 
 startGameGcd();
