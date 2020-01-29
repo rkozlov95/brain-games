@@ -10,21 +10,21 @@
 sudo npm install
 ```
 
-<a href="https://asciinema.org/a/291680" target="_blank"><img src="https://asciinema.org/a/291680.svg" /></a>
+[![asciicast](https://asciinema.org/a/296652.svg)](https://asciinema.org/a/296652)
 
 ## Usage
 
 **brain-even** — game launch brain-even
-<a href="https://asciinema.org/a/291686" target="_blank"><img src="https://asciinema.org/a/291686.svg" /></a>
+[![asciicast](https://asciinema.org/a/296653.svg)](https://asciinema.org/a/296653)
 
 **brain-calc** — game launch brain-calc
-<a href="https://asciinema.org/a/292246" target="_blank"><img src="https://asciinema.org/a/292246.svg" height="490" width="750"/></a>
+[![asciicast](https://asciinema.org/a/296654.svg)](https://asciinema.org/a/296654)
 
 **brain-gcd** — game launch brain-gcd
-<a href="https://asciinema.org/a/292264" target="_blank"><img src="https://asciinema.org/a/292264.svg" height="490" width="750"/></a>
+[![asciicast](https://asciinema.org/a/296659.svg)](https://asciinema.org/a/296659)
 
 **brain-progression** — game launch brain-progression
-<a href="https://asciinema.org/a/296189" target="_blank"><img src="https://asciinema.org/a/296189.svg" height="490" width="750"/></a>
+[![asciicast](https://asciinema.org/a/296661.svg)](https://asciinema.org/a/296661)
 
 **brain-prime** — game launch brain-prime
-<a href="https://asciinema.org/a/292330" target="_blank"><img src="https://asciinema.org/a/292330.svg" height="490" width="750"/></a>
+[![asciicast](https://asciinema.org/a/296663.svg)](https://asciinema.org/a/296663)
